@@ -22,7 +22,6 @@ import java.beans.PropertyVetoException;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-//@ComponentScan(value = "web")
 public class AppConfig {
 
     @Autowired
@@ -35,13 +34,6 @@ public class AppConfig {
         dataSource.setUrl(env.getProperty("db.url"));
         dataSource.setUsername(env.getProperty("db.username"));
         dataSource.setPassword(env.getProperty("db.password"));
-/*
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        dataSource.setDriverClass(env.getProperty("db.driver"));
-        dataSource.setJdbcUrl(env.getProperty("db.url"));
-        dataSource.setUser(env.getProperty("db.username"));
-        dataSource.setPassword(env.getProperty("db.password"));
-*/
 
         return dataSource;
     }
