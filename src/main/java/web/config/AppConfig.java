@@ -1,6 +1,7 @@
 package web.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -20,8 +21,9 @@ import java.beans.PropertyVetoException;
 
 
 @Configuration
-@PropertySource("classpath:db.properties")
+@EnableAspectJAutoProxy
 @EnableTransactionManagement
+@PropertySource("classpath:db.properties")
 public class AppConfig {
 
     @Autowired
